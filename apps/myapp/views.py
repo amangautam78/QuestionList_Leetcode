@@ -8,12 +8,13 @@ from .serializer import QuestionSerializer
 from rest_framework import status
 # Create your views here.
 
+#views to get the questionlists (url: http://127.0.0.1:8000/question-list/)
 class QuestionList(APIView):
     def get(self, request):
         question = Question.objects.all()
         serialize = QuestionSerializer(question, many=True)
         return Response(serialize.data, status=status.HTTP_200_OK)
-
+#views to create a question (urlhttp://127.0.0.1:8000/add/)
 class CreateQuestion(APIView):
     def post(self, request):
         question = request.data
@@ -23,6 +24,7 @@ class CreateQuestion(APIView):
             return Response(serialize.data, status=status.HTTP_201_CREATED)
         return Response(serialize.errors, status=status.HTTP_400_BAD_REQUEST)
 
+#views to get, update(put) and delete a particular quesion from the list(http://127.0.0.1:8000/question/<int:id>/)
 class UpdateQuestion(APIView):
     def get(self, request, id):
         try:
