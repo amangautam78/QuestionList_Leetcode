@@ -9,4 +9,4 @@ class Question(models.Model):
     url = models.URLField()
 
     def __str__(self):
-        return self.qid + ' ' + self.title
+        return str(self.qid)+" "+self.title
