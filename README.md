@@ -9,3 +9,13 @@ Leetcode Question List API using Django Rest Framework
         - http://127.0.0.1:8000/add/  (to add new question)
         - http://127.0.0.1:8000/question/1/ (to get the particular question from the list and can perform update delete on that)
       
+Output look like:
+  {
+        "id": 1,
+        "qid": 198,
+        "title": "House Robber",
+        "type": "Medium",
+        "url": "https://leetcode.com/problems/house-robber/"
+    }
+    
+    Note: During Post request dont add id field it will generate automatically
